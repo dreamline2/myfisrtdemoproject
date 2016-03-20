@@ -1,0 +1,170 @@
+body {
+    font-size: 9pt
+}
+
+h1 {
+    width: 100%;
+    margin: auto;
+    font-size: 36pt;
+    font-family: monospace;
+    text-align: center
+}
+
+h2 {
+    font-size: 20pt;
+    font-family: 微軟正黑體;
+    color: #006030;
+    text-align: center;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 9pt;
+    font-family: 微軟正黑體;
+    text-align: center;
+    font-weight: bold
+}
+
+a {
+    font-size: 10pt;
+    color: #0044BB;
+    text-decoration: none
+}
+
+p {
+    font-size: 20px;
+    font-family: 微軟正黑體;
+    font-weight: bold;
+}
+
+section {
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px grey
+}
+
+div.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 200px;
+}
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: 120px;
+}
+
+div.desc {
+    padding: 5px;
+    text-align: center;
+}
+
+.header {
+    background-color: #FFFFFF;
+    width: 100%;
+    margin: auto;
+    font-size: 36pt;
+    font-family: monospace;
+    text-align: center;
+}
+
+.sidebar_left {
+    background-color: #FFFFFF;
+    height: 1000px;
+    width: 150px;
+    float: left;
+}
+
+.content {
+    background-color: #FFFFFF;
+    height: 700px;
+    width: 70%;
+    float: left;
+}
+
+.content img {
+    width: 700px;
+    height: 400px;
+}
+
+.sidebar_right {
+    background-color: #FFFFFF;
+    height: 1000px;
+    width: 270px;
+    float: right;
+}
+
+.sidebar_right img {
+    width: 260px;
+    height: 135px;
+    border: 3px solid #000;
+}
+
+.sidebar_right iframe {
+    width: 270px;
+    height: 135px;
+}
+
+.sidebar_right ul li {
+    list-style: none;
+    float: left;
+}
+
+.sidebar_right ul li p {
+    font-size: 9pt;
+    font-family: 微軟正黑體;
+    text-align: center;
+    font-weight: bold;
+}
+
+.content2 {
+    background-color: #FAFAD2;
+    height: 300px;
+    width: 20%;
+    padding: 15px;
+    float: left;
+}
+
+.footer {
+    background-color: #FFFFFF;
+    clear: both;
+    text-align: center;
+    font-family: monospace;
+    color: #02F78E;
+}
+
+.profile {
+    font-size: 20pt;
+    font-family: 微軟正黑體;
+    color: #006030;
+    text-align: center;
+    font-weight: bold;
+}
+
+.profile .title {
+    font-size: 20px;
+    font-family: 微軟正黑體;
+    font-weight: bold;
+}
+
+.activity .title {
+    font-size: 20pt;
+    font-family: 微軟正黑體;
+    color: #006030;
+    text-align: center;
+    font-weight: bold;
+}
+
+.activity ul {
+    padding: 0px;
+}
+
+.menu ul::after, .activity ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
