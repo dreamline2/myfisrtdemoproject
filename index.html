@@ -3,214 +3,110 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Jing-Yan Chen</title>
+	<style type="text/css">
+		body{font-size: 9pt}
+		h1{width:100%; margin: auto; font-size: 36pt; font-family: monospace; text-align: center}
+		h2{font-size: 20pt; font-family: 微軟正黑體; color: #006030; text-align: center; font-weight: bold;}
+		h3{font-size: 9pt; font-family: 微軟正黑體; text-align: center; font-weight: bold}
+		a{font-size: 10pt; color: #0044BB; text-decoration: none}	
+		p{font-size: 20px; font-family: 微軟正黑體; font-weight: bold;}
+		section {border-radius: 25px; box-shadow: 10px 10px 5px grey}
+		div.img {margin: 5px; border: 1px solid #ccc; float: left; width: 200px;}
+		div.img:hover {border: 1px solid #777;}
+		div.img img {width: 100%; height: 120px;}
+		div.desc {padding: 5px; text-align: center;}
+	</style>
 </head>
 <body>
-<div id="sitebody">
-	<!--<div id="header" style="background-color:#02F78E;"><h1 style="margin-bottom:0;">Welcome to my page.</h1>
-		<td font="標楷體">Jing-Yan Chen</td><td><a align="right">Home About</a>></td><p> 
- 	</div>-->
-	<div id="header" style="background-color:#FFFFFF;">
-		<h1 style="margin-bottom:0;"><marquee onMouseOver="this.stop()" onMouseOut="this.start()"><font face="monospace" color="#02F78E">Welcome to my page!!</font></marquee></h1>
-	</div>
 
-	<div id="left" style="background-color:#FFFFFF;height:1000px;width:150px;float:left;">
-	</div>
+	<div id="header" style="background-color:#FFFFFF;"><h1>Welcome to My College Life.</h1></div>
 
-	<div id="content" style="background-color:#FFFFFF;height:700px;width:60%;float:left;">
-		<!--<h2 align="center"><font face="微軟正黑體">C.B.D 三系 核心 幹部訓練營</font></h2>
-		<h1 align="center"><img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-prn2/t31.0-8/10922379_1037645886252035_1189408949116738963_o.jpg" width="480" height="280"></h1><p>-->
-		<!-- SLIDER CSS -->
-<style type="text/css">
-/*
- * jQuery FlexSlider v2.2.0
- * http://www.woothemes.com/flexslider/
- *
- * Copyright 2012 WooThemes
- * Free to use under the GPLv2 license.
- * http://www.gnu.org/licenses/gpl-2.0.html
- *
- * Contributing author: Tyler Smith (@mbmufffin)
- */
+	<div id="sidebar_left" style="background-color:#FFFFFF;height:1000px;width:150px;float:left;"></div>
 
-
-/* Browser Resets
-*********************************/
-.flex-container a:active,
-.flexslider a:active,
-.flex-container a:focus,
-.flexslider a:focus  {outline: none;}
-.slides,
-.flex-control-nav,
-.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
-
-
-/* FlexSlider Necessary Styles
-*********************************/
-.flexslider li {
-border: 0 none !important;
-padding: 0 !important;
-text-indent: 0 !important;
-margin-bottom: 0 !important;
-}
-.flexslider {margin: 0; padding: 0;}
-.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
-.flexslider .slides img {width: 100%; display: block;}
-.flexslider .slides, .flexslider .slides img, .flex-direction-nav { margin: 0 !important; padding: 0 !important; }
-.flex-pauseplay span {text-transform: capitalize;}
-
-/* Clearfix for the .slides element */
-.slides:after {content: "\0020"; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
-html[xmlns] .slides {display: block;}
-* html .slides {height: 1%;}
-
-/* No JavaScript Fallback */
-/* If you are not using another script, such as Modernizr, make sure you
- * include js that eliminates this class on page load */
-.no-js .slides > li:first-child {display: block;}
-
-/* FlexSlider Default Theme
-*********************************/
-.flexslider { margin: 0 0 60px; background: #fff; border: 4px solid #fff; position: relative; -webkit-border-radius: 4px; -moz-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.2); -moz-box-shadow: 0 1px 4px rgba(0,0,0,.2); -o-box-shadow: 0 1px 4px rgba(0,0,0,.2); box-shadow: 0 1px 4px rgba(0,0,0,.2); zoom: 1; }
-.flex-viewport { max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; }
-.loading .flex-viewport { max-height: 300px; }
-.flexslider .slides { zoom: 1; }
-.carousel li { margin-right: 5px; }
-
-/* Direction Nav */
-.flex-direction-nav {*height: 0;}
-.flex-direction-nav a  { text-decoration:none; display: block; width: 40px; height: 45px; margin: -20px 0 0; position: absolute; top: 50%; z-index: 10; overflow: hidden; opacity: 0; cursor: pointer; color: rgba(0,0,0,0.8); text-shadow: 1px 1px 0 rgba(255,255,255,0.3); -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease; }
-.flex-direction-nav .flex-prev { background: url("http://project.dimpost.com/flexslider-basic/img/arrows1.png") no-repeat scroll -15px -92px transparent; left: -50px; }
-.flex-direction-nav .flex-next { background: url("http://project.dimpost.com/flexslider-basic/img/arrows1.png") no-repeat scroll -15px -15px transparent; right: -50px; text-align: right; }
-.flexslider:hover .flex-prev { opacity: 0.5; left: 10px; }
-.flexslider:hover .flex-next { opacity: 0.5; right: 10px; }
-.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover { opacity: 0.9; }
-
-
-/* Pause/Play */
-.flex-pauseplay a { display: block; width: 20px; height: 20px; position: absolute; bottom: 5px; left: 10px; opacity: 0.8; z-index: 10; overflow: hidden; cursor: pointer; color: #000; }
-.flex-pauseplay a:before  { font-family: "flexslider-icon"; font-size: 20px; display: inline-block; content: '\f004'; }
-.flex-pauseplay a:hover  { opacity: 1; }
-.flex-pauseplay a.flex-play:before { content: '\f003'; }
-
-/* Control Nav */
-.flex-control-nav {width: 100%; position: absolute; bottom: -40px; text-align: center;}
-.flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
-.flex-control-paging li a {width: 11px; height: 11px; display: block; background: #666; background: rgba(0,0,0,0.5); cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); -moz-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); -o-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); box-shadow: inset 0 0 3px rgba(0,0,0,0.3); }
-.flex-control-paging li a:hover { background: #333; background: rgba(0,0,0,0.7); }
-.flex-control-paging li a.flex-active { background: #000; background: rgba(0,0,0,0.9); cursor: default; }
-
-.flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
-.flex-control-thumbs li {width: 25%; float: left; margin: 0;}
-.flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
-.flex-control-thumbs img:hover {opacity: 1;}
-.flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
-
-@media screen and (max-width: 860px) {
-  .flex-direction-nav .flex-prev { opacity: 1; left: 10px;}
-  .flex-direction-nav .flex-next { opacity: 1; right: 10px;}
-}
-</style>
-    
-<!-- SLIDER HTML -->
-      <div id="flex-isfb">
-        <!-- Preloader -->
-        <div id="preloader"></div>
-        <style>
-        /* Preloader */
-        #preloader {
-            position: absolute;
-            top:0;
-            left:0;
-            right:0;
-            bottom:0;
-            background-color:#fff; /* change if the mask should have another color then white */
-            z-index:999999999999; /* makes sure it stays on top */
-        }
-        
-        </style>
-        <div class="flexslider">
-          <ul class="slides">
-           	<li>
-                <h1 align="center"><font face="微軟正黑體">大苑子廣告徵才比賽-愛分享</font></h1>
-                <h1 align="center"><img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/1510424_672549386144932_5355088145799785787_n.jpg?oh=bd42336bc6add0509db44a124536fcb0&oe=5793CF22"></h1>
-                </a>
-            </li>
-         	 <li>
-                <h1 align="center"><font face="微軟正黑體">第一屆創意啦啦隊</font></h1>
-                <img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/10010276_609374612477081_1514726143619393031_o.jpg">
-                </a>
-            </li>
-             <li>
-                <h1 align="center"><font face="微軟正黑體">迎新舞蹈大賽-資企管炎</font></h1>
-                <img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-ash2/t31.0-8/10286980_777385492321971_1189649101268498207_o.jpg">
-                </a>
-            </li>
-            <li>  
-                <h1 align="center"><font face="微軟正黑體">C.B.D 核心 榮耀再續 三系聯合幹部訓練營</font></h1>
-                <img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-prn2/t31.0-8/10922379_1037645886252035_1189408949116738963_o.jpg">
-                </a>
-            </li>
-           
-            <li>
-                <h1 align="center"><font face="微軟正黑體">第二屆創意啦啦隊</font></h1>
-                <img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10669362_821342207955948_6562431366055940798_o.jpg">
-                </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-<!-- SLIDER JS -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="http://project.dimpost.com/flexslider-basic/js/jquery.flexslider-min.js"></script>
-  <script type="text/javascript">
-    $(window).load(function(){
-      $('.flexslider').flexslider({
-  animation: "slide",
-  controlNav: true, 
-  directionNav: true,
-  easing: "swing",
-  slideshowSpeed: 3000,        
-     animationSpeed: 600, 
-      });
-    });
-    //<![CDATA[
-        $(window).load(function() { 
-            $('#preloader').delay(350).fadeOut('slow'); 
-        })
-    //]]>
-</script> 
-	</div>
+	<div id="content" style="background-color:#FFFFFF;height:700px;width:70%;float:left;">
 	
-	
+		<p>活動照片</p>
+		<div class="img"><a target="_blank" href="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/1524121_674106559277992_1562218070_o.jpg">
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/1524121_674106559277992_1562218070_o.jpg" width="700" height="400"></a>	
+				<div class="desc">期末餐會-誕疼的資味</div>
+		</div>
+		<div class="img"><a target="_blank" href="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/1513260_830769900271456_815218928_n.jpg?oh=255fd0d8a7bbfde1c081265f4019fb70&oe=5780F4BF">
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/1513260_830769900271456_815218928_n.jpg?oh=255fd0d8a7bbfde1c081265f4019fb70&oe=5780F4BF" width="700" height="400"></a>	
+				<div class="desc">聖誕趴-螢色狂想曲之聖誕夜未眠</div>
+		</div>
+		<div class="img"><a target="_blank" href="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/1510424_672549386144932_5355088145799785787_n.jpg?oh=bd42336bc6add0509db44a124536fcb0&oe=5793CF22">
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/1510424_672549386144932_5355088145799785787_n.jpg?oh=bd42336bc6add0509db44a124536fcb0&oe=5793CF22" width="700" height="400"></a>	
+				<div class="desc">大苑子廣告徵才比賽-愛分享</div>
+		</div>
+		<div class="img"><a target="_blank" href="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-frc3/t31.0-8/1399529_695999593746477_2026646645_o.jpg">
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-frc3/t31.0-8/1399529_695999593746477_2026646645_o.jpg" width="700" height="400"></a>	
+				<div class="desc">校慶擺攤-鐵資路烤肉</div>
+		</div>
+		<div class="img"><a target="_blank" href="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/10356252_256735217862811_3918826792692785490_n.jpg?oh=cd622ba35857ee1670b86d897f842c07&oe=574C30FD">
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/10356252_256735217862811_3918826792692785490_n.jpg?oh=cd622ba35857ee1670b86d897f842c07&oe=574C30FD" width="700" height="400"></a>	
+				<div class="desc">期末餐會-回憶資路</div>
+		</div>
+		<div class="img"><a target="_blank" href="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/10010276_609374612477081_1514726143619393031_o.jpg">
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/10010276_609374612477081_1514726143619393031_o.jpg" width="700" height="400"></a>	
+				<div class="desc">第一屆創意啦啦隊</div>
+		</div>
+		<div class="img"><a target="_blank" href="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10669362_821342207955948_6562431366055940798_o.jpg">
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xpa1/t31.0-8/10669362_821342207955948_6562431366055940798_o.jpg" width="700" height="400"></a>	
+				<div class="desc">第二屆創意啦啦隊</div>
+		</div>
+		<div class="img"><a target="_blank" href="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-prn2/t31.0-8/10922379_1037645886252035_1189408949116738963_o.jpg">
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-prn2/t31.0-8/10922379_1037645886252035_1189408949116738963_o.jpg" width="700" height="400"></a>	
+				<div class="desc">C.B.D三系聯合幹部訓練營</div>
+		</div>
+		<div class="img"><a target="_blank" href="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-ash2/t31.0-8/10286980_777385492321971_1189649101268498207_o.jpg">
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-ash2/t31.0-8/10286980_777385492321971_1189649101268498207_o.jpg" width="700" height="400"></a>	
+				<div class="desc">迎新舞蹈大賽-資企管炎</div>
+		</div>
+		<div class="img"><a target="_blank" href="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/12072633_825537277566256_1282213937296033654_n.jpg?oh=fab8c538cc0574ba0495d498594fc720&oe=577FD1CF">
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/12072633_825537277566256_1282213937296033654_n.jpg?oh=fab8c538cc0574ba0495d498594fc720&oe=577FD1CF" width="700" height="400"></a>	
+				<div class="desc">迎新</div>
+		</div>
+		<div class="img"><a target="_blank" href="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xfl1/t31.0-8/10928963_856682707713576_168283996070325852_o.jpg">
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xfl1/t31.0-8/10928963_856682707713576_168283996070325852_o.jpg" width="700" height="400"></a>	
+				<div class="desc">系週</div>
+		</div>
+		<div class="img"><a target="_blank" href="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/12274655_1068128723231690_1072150897076432007_n.jpg?oh=d4c3bfdff68f71e98c1d062cf1342cc0&oe=5787D31B">
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/12274655_1068128723231690_1072150897076432007_n.jpg?oh=d4c3bfdff68f71e98c1d062cf1342cc0&oe=5787D31B" width="700" height="400"></a>	
+				<div class="desc">迎新舞蹈大賽-發設企工波</div>
+		</div>
+	</div>
 
-	<div id="sidebar_right" style="background-color:#FFFFFF;height:1000px;width:270px;float:right;">
-		<h4 align="center"><font face="monospace" >
-			<a href="file:///C:/Users/Senpai/Desktop/index.html#"><b>Home</b></a>
-			<a href=""><b>About</b></a>
-			<a href="https://www.facebook.com/jingyan.chen.7"><b>Facebook</b></a>
-			<a href="https://www.youtube.com/channel/UCyHjmiYlBvb-STih3BL-o7Q"><b>Youtube</b></a><p>
-			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xtl1/t31.0-8/12671849_1002724386491000_7086331478571764613_o.jpg" width="260" height="135" border="3"><p>
-			<h6 align="center"><b>Jing-Yan Chen</b></h6><p>
-			<h2 align="center"><font face="微軟正黑體" color="#006030"><b>活動影片</b></font><p>
-		<h6 align="center"><font face="微軟正黑體">第一屆創意啦啦隊</font></h6>
+	<div id="sidebar_right" style="background-color:#FFFFFF; height:1000px; width:270px; float:right;">
+		<h3>
+			<a href="file:///C:/Users/Senpai/Desktop/index.html#">Home｜</a>
+			<a href="">About｜</a>
+			<a href="https://www.facebook.com/jingyan.chen.7">Facebook｜</a>
+			<a href="https://www.youtube.com/channel/UCyHjmiYlBvb-STih3BL-o7Q">Youtube</a>
+			<p>陳敬彥</p>
+			<img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xtl1/t31.0-8/12671849_1002724386491000_7086331478571764613_o.jpg" width="260" height="135" border="3">
+		</h3>
+		<h2>
+			活動影片
+		</h2>
+		<h3>
+			第一屆創意啦啦隊
 			<iframe width="270" height="135" src="https://www.youtube.com/embed/Ozomn-f3q4s" frameborder="0" allowfullscreen ></iframe>
-		<h6 align="center"><font face="微軟正黑體">資企管炎-迎新舞蹈大賽</font></h6>
+			資企管炎-迎新舞蹈大賽
 			<iframe width="270" height="135" src="https://www.youtube.com/embed/bmmWRBvC8M0" frameborder="0" allowfullscreen ></iframe>
-		<h6 align="center"><font face="微軟正黑體">第二屆創意啦啦隊</font></h6>
+			第二屆創意啦啦隊
 			<iframe width="270" height="135" src="https://www.youtube.com/embed/nf1lMB8p6OQ" frameborder="0" allowfullscreen ></iframe>
-		<h6 align="center"><font face="微軟正黑體">發設企工波-迎新舞蹈大賽</font></h6>
+			發設企工波-迎新舞蹈大賽
 			<iframe width="270" height="135" src="https://www.youtube.com/embed/UDZTECQAKzI" frameborder="0" allowfullscreen></iframe>
+		</h3>
 	</div>
 
-	<div id="content2" style="background-color:#FFFFFF;height:500px;width:60%;float:left;">
-		<h1 align="left"><font face="monospace" color="#272727"><b>Welcome.</b></font></h1>
-		<h3><font face="微軟正黑體" color="#272727"><ul type=disc>歡迎來到我的網站</ul></font></h3>
-	</div>
+	<section id="content2" style="background-color: #FAFAD2; height: 300px; width:20%; padding: 15px; float:left;">
+		<p>歡迎來到我的網站</p>
+	</section>
 　
-	
 
 　<div id="footer" style="background-color:#FFFFFF;clear:both;text-align:center;"><font face="monospace" color="#02F78E">Bottom</font></div>
 </div>
 </body>
 </html>
+
