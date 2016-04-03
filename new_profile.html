@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<!--
+  Visualize by TEMPLATED
+  templated.co @templatedco
+  Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html ng-app="myApp">
+  <head>
+    <title>Visualize by TEMPLATED</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- <link rel="stylesheet" href="http://templated.co/items/demos/visualize/assets/css/main.css"> -->
+  </head>
+  <body>
+
+    <!-- Wrapper -->
+      <div id="wrapper" ng-controller="mainController as page">
+
+        <!-- Header -->
+          <header id="header">
+            <span class="avatar"><img src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xtl1/t31.0-8/12671849_1002724386491000_7086331478571764613_o.jpg" alt="" /></span>
+            <h1>This is <strong>College Life.</strong>, a school life photos by <a href="http://templated.co">陳敬彥</a><br />
+            and released for free under the Creative Commons License.</h1>
+            <ul class="icons">
+              <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+              <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+              <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+              <li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
+              <li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+            </ul>
+          </header>
+
+        <!-- Main -->
+          <section id="main">
+            <!-- Thumbnails -->
+              <section class="thumbnails">
+                <div id="column1">
+                  <a href="{{ activity.link }}" ng-repeat="activity in page.activities">
+                    <img src="{{ activity.url }}" alt="" />
+                    <h3>{{ activity.text }}</h3>
+                  </a>
+                </div>
+                <div id="column2">
+                  <a href="images/fulls/03.jpg">
+                    <img src="images/thumbs/03.jpg" alt="" />
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                  </a>
+                  <a href="images/fulls/04.jpg">
+                    <img src="images/thumbs/04.jpg" alt="" />
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                  </a>
+                  <a href="images/fulls/05.jpg">
+                    <img src="images/thumbs/05.jpg" alt="" />
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                  </a>
+                </div>
+                <div id="column3">
+                  <a href="images/fulls/06.jpg">
+                    <img src="images/thumbs/06.jpg" alt="" />
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                  </a>
+                  <a href="images/fulls/07.jpg">
+                    <img src="images/thumbs/07.jpg" alt="" />
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                  </a>
+                </div>
+              </section>
+
+          </section>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <p>&copy; Untitled. All rights reserved. Design: <a href="http://templated.co">TEMPLATED</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+          </footer>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+      <script src="assets/js/jquery.poptrox.min.js"></script>
+      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/main.js"></script>
+      <script>
+        angular.module('myApp', [])
+          .controller('mainController', function() {
+            var vm = this;
+
+            vm.activities = [
+              {
+                link:"https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/1524121_674106559277992_1562218070_o.jpg",
+                url: "https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/1524121_674106559277992_1562218070_o.jpg",
+                text:'期末餐會-誕疼的資味', 
+                done:true
+              },
+              {
+                link:"https://scontent-tpe1-1.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/1513260_830769900271456_815218928_n.jpg?oh=255fd0d8a7bbfde1c081265f4019fb70&oe=5780F4BF",
+                url: "https://scontent-tpe1-1.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/1513260_830769900271456_815218928_n.jpg?oh=255fd0d8a7bbfde1c081265f4019fb70&oe=5780F4BF",
+                text:'聖誕趴-螢色狂想曲之聖誕夜未眠', 
+                done:true
+              }
+            ];
+         
+          });
+      </script>
+
+  </body>
+</html>
