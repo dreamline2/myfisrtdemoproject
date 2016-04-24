@@ -164,10 +164,9 @@
             // vm.column = [];
             vm.filter = function (data, num) {
               var result = [];
-              for (var i=0;i<data.length;i++) {
-                if (!((i+num)%3)) {result.push(data[i]);}
-              }
-              console.log(result)
+              data.map(function(value,index) {
+                if (!((index+num)%vm.rows.length)) {result.push(value)}
+              });
               return result
             }
 
