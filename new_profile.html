@@ -20,14 +20,10 @@
         <!-- Header -->
           <header id="header">
             <span class="avatar"><img src="images/MCL/00.jpg" alt="" /></span>
-            <h1 ng-repeat="introduction in page.introductions | limitTo : 1">{{introduction}}</h1>
-            <h1 ng-repeat="introduction in page.introductions | limitTo : 1 : 1">{{introduction}}</h1>
+            <p ng-repeat="introduction in page.introductions | limitTo : 2 : 0">{{introduction}}</p>
+            <div ng-repeat="intro in page.intros" ng-bind-html-unsafe="intro.content">{{intro.content}}</div>
             <ul class="icons">
-              <li><a href="#" class="icon style2 fa-twitter" ng-repeat="logo in page.logos | limitTo : 1"></a></li>
-              <li><a href="#" class="icon style2 fa-facebook" ng-repeat="logo in page.logos | limitTo : 1 : 1"></a></li>
-              <li><a href="#" class="icon style2 fa-instagram" ng-repeat="logo in page.logos | limitTo : 1 : 2"></a></li>
-              <li><a href="#" class="icon style2 fa-500px" ng-repeat="logo in page.logos | limitTo : 1 : 3"></a></li>
-              <li><a href="#" class="icon style2 fa-envelope-o" ng-repeat="logo in page.logos | limitTo : 1 : 4"></span></a></li>
+              <li ng-repeat="social in page.socialItem"><a href="{{social.url}}" class="icon style2 fa-{{social.name}}"></a></li>
             </ul>
           </header>
 
@@ -35,55 +31,10 @@
           <section id="main">
             <!-- Thumbnails -->
               <section class="thumbnails">
-                <div id="column1">
-                  <a href="{{ activity.link }}" ng-repeat="activity in page.activities | limitTo : 1">
+                <div id="column{{row}}" ng-repeat="row in page.rows">
+                  <a href="{{ activity.link }}" ng-repeat="activity in page.filter(page.activities, row)">
                     <img src="{{ activity.url }}" alt="" />
-                   <h3 ng-repeat="text in page.texts | limitTo : 1" >{{text}}</h3>
-                   <a href="{{ activity.link }}" ng-repeat="activity in page.activities | limitTo : 1 : 1">
-                    <img src="{{ activity.url }}" alt="" />
-                   <h3 ng-repeat="text in page.texts | limitTo : 1 : 1" >{{text}}</h3>
-                   <a href="{{ activity.link }}" ng-repeat="activity in page.activities | limitTo : 1 : 2">
-                    <img src="{{ activity.url }}" alt="" />
-                   <h3 ng-repeat="text in page.texts | limitTo : 1 : 2" >{{text}}</h3>
-                   <a href="{{ activity.link }}" ng-repeat="activity in page.activities | limitTo : 1 : 3">
-                    <img src="{{ activity.url }}" alt="" />
-                   <h3 ng-repeat="text in page.texts | limitTo : 1 : 3" >{{text}}</h3>
-                  </a>
-                </div>
-                <div id="column2">
-                  <a href="{{ activity.link }}" ng-repeat="activity in page.activities | limitTo : 1 : 4">
-                    <img src="{{ activity.url }}" alt="" />
-                    <h3 ng-repeat="text in page.texts | limitTo : 1 : 4" >{{text}}</h3>
-                  </a>  
-                  <a href="{{ activity.link }}" ng-repeat="activity in page.activities | limitTo : 1 : 5">
-                    <img src="{{ activity.url }}" alt="" />
-                    <h3 ng-repeat="text in page.texts | limitTo : 1 : 5" >{{text}}</h3>
-                  </a> 
-                  <a href="{{ activity.link }}" ng-repeat="activity in page.activities | limitTo : 1 : 6">
-                    <img src="{{ activity.url }}" alt="" />
-                    <h3 ng-repeat="text in page.texts | limitTo : 1 : 6" >{{text}}</h3>
-                  </a> 
-                  <a href="{{ activity.link }}" ng-repeat="activity in page.activities | limitTo : 1 : 7">
-                    <img src="{{ activity.url }}" alt="" />
-                    <h3 ng-repeat="text in page.texts | limitTo : 1 : 7" >{{text}}</h3>
-                  </a>     
-                </div>
-                <div id="column3">
-                  <a href="{{ activity.link }}" ng-repeat="activity in page.activities | limitTo : 1 : 8">
-                    <img src="{{ activity.url }}" alt="" />
-                    <h3 ng-repeat="text in page.texts | limitTo : 1 : 8" >{{text}}</h3>
-                  </a>
-                   <a href="{{ activity.link }}" ng-repeat="activity in page.activities | limitTo : 1 : 9">
-                    <img src="{{ activity.url }}" alt="" />
-                    <h3 ng-repeat="text in page.texts | limitTo : 1 : 9" >{{text}}</h3>
-                  </a>
-                   <a href="{{ activity.link }}" ng-repeat="activity in page.activities | limitTo : 1 : 10">
-                    <img src="{{ activity.url }}" alt="" />
-                    <h3 ng-repeat="text in page.texts | limitTo : 1 : 10" >{{text}}</h3>
-                  </a>
-                   <a href="{{ activity.link }}" ng-repeat="activity in page.activities | limitTo : 1 : 11">
-                    <img src="{{ activity.url }}" alt="" />
-                    <h3 ng-repeat="text in page.texts | limitTo : 1 : 11" >{{text}}</h3>
+                    <p>{{activity.text}}</p>
                   </a>
                 </div>
               </section>
@@ -107,92 +58,119 @@
           .controller('mainController', function() {
             var vm = this;
 
+            vm.intros = [{
+              content: '<h1>This is My College Life, a school life photos by 陳敬彥.</h1>',
+              tag: "h1"
+            },{
+              content: '<p>It is released for free under the Creative Commons License.</p>',
+              tag: "p"
+            }];
 
             vm.introductions = ['This is My College Life, a school life photos by 陳敬彥.', 'It is released for free under the Creative Commons License.', 'By Jing-Yan Chen.', ''  
             ];
 
-            vm.logos = [ 'Twitter', 'Facebook', 'Instagram', '500px', 'Email' 
-            ];
-
-            vm.texts = [ '期末餐會-誕疼的資味', '聖誕趴-螢色狂想曲之聖誕夜未眠', '大苑子廣告徵才比賽-愛分享', '校慶擺攤-鐵資路烤肉','期末餐會-回憶資路', 
-                         '第一屆創意啦啦隊', '第二屆創意啦啦隊', 'C.B.D三系聯合幹部訓練營', '迎新舞蹈大賽-資企管炎', '迎新-發設企工波', '系週', '迎新舞蹈大賽-發設企工波'
-            ];
+            vm.socialItem = [{
+              name: 'twitter',
+              url: "https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/1524121_674106559277992_1562218070_o.jpg"
+            },{
+              name: 'facebook',
+              url: "https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/1524121_674106559277992_1562218070_o.jpg"
+            },{
+              name: 'instagram',
+              url: "https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/1524121_674106559277992_1562218070_o.jpg"
+            },{
+              name: '500px',
+              url: "https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/1524121_674106559277992_1562218070_o.jpg"
+            },{
+              name: 'envelope-o',
+              url: "https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/1524121_674106559277992_1562218070_o.jpg"
+            }];
 
             vm.activities = [
               {
                 link:"https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/1524121_674106559277992_1562218070_o.jpg",
                 url: "https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/1524121_674106559277992_1562218070_o.jpg",
-                //text:'期末餐會-誕疼的資味', 
+                text:'期末餐會-誕疼的資味', 
                 done:true
               },
               {
                 link:"https://scontent-tpe1-1.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/1513260_830769900271456_815218928_n.jpg?oh=255fd0d8a7bbfde1c081265f4019fb70&oe=5780F4BF",
                 url: "https://scontent-tpe1-1.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/1513260_830769900271456_815218928_n.jpg?oh=255fd0d8a7bbfde1c081265f4019fb70&oe=5780F4BF",
-                //text:'聖誕趴-螢色狂想曲之聖誕夜未眠', 
+                text:'聖誕趴-螢色狂想曲之聖誕夜未眠', 
                 done:true
               },
               {
                 link:"images/MCL/03.jpg",
                 url: "images/MCL/03.jpg",
-                //text:'大苑子廣告徵才比賽-愛分享', 
+                text:'大苑子廣告徵才比賽-愛分享', 
                 done:true
               },
               {
                 link:"images/MCL/04.jpg",
                 url: "images/MCL/04.jpg",
-                //text:'校慶擺攤-鐵資路烤肉', 
+                text:'校慶擺攤-鐵資路烤肉', 
                 done:true
               },
               {
                 link:"images/MCL/05.jpg",
                 url: "images/MCL/05.jpg",
-                //text:'期末餐會-回憶資路', 
+                text:'期末餐會-回憶資路', 
                 done:true
               },
               {
                 link:"images/MCL/06.jpg",
                 url: "images/MCL/06.jpg",
-                //text:'第一屆創意啦啦隊', 
+                text:'第一屆創意啦啦隊', 
                 done:true
               },
               {
                 link:"images/MCL/07.jpg",
                 url: "images/MCL/07.jpg",
-                //text:'第二屆創意啦啦隊', 
+                text:'第二屆創意啦啦隊', 
                 done:true
               },
               {
                 link:"images/MCL/08.jpg",
                 url: "images/MCL/08.jpg",
-                //text:'C.B.D三系聯合幹部訓練營', 
+                text:'C.B.D三系聯合幹部訓練營', 
                 done:true
               },
               {
                 link:"images/MCL/09.jpg",
                 url: "images/MCL/09.jpg",
-                //text:'迎新舞蹈大賽-資企管炎', 
+                text:'迎新舞蹈大賽-資企管炎', 
                 done:true
               },
               {
                 link:"images/MCL/10.jpg",
                 url: "images/MCL/10.jpg",
-                //text:'迎新-發設企工波', 
+                text:'迎新-發設企工波', 
                 done:true
               },
               {
                 link:"images/MCL/11.jpg",
                 url: "images/MCL/11.jpg",
-                //text:'系週', 
+                text:'系週', 
                 done:true
               },
               {
                 link:"images/MCL/12.jpg",
                 url: "images/MCL/12.jpg",
-                //text:'迎新舞蹈大賽-發設企工波', 
+                text:'迎新舞蹈大賽-發設企工波', 
                 done:true
               }
             ];
-         
+            vm.rows = [1,2,3];
+            // vm.column = [];
+            vm.filter = function (data, num) {
+              var result = [];
+              for (var i=0;i<data.length;i++) {
+                if (!((i+num)%3)) {result.push(data[i]);}
+              }
+              console.log(result)
+              return result
+            }
+
           });
       </script>
 
