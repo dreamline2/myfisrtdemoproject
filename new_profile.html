@@ -31,8 +31,8 @@
           <section id="main">
             <!-- Thumbnails -->
               <section class="thumbnails">
-                <div id="column{{row}}" ng-repeat="row in page.rows">
-                  <a href="{{ activity.link }}" ng-repeat="activity in page.filter(page.activities, row)">
+                <div id="{{row.id}}" ng-repeat="row in page.rows">
+                  <a href="{{ activity.link }}" ng-repeat="activity in page.filter(page.activities, $index)">
                     <img src="{{ activity.url }}" alt="" />
                     <p>{{activity.text}}</p>
                   </a>
@@ -160,8 +160,13 @@
                 done:true
               }
             ];
-            vm.rows = [1,2,3];
-            // vm.column = [];
+            vm.rows = [{
+              id: "column1"
+            },{
+              id: "column2"
+            },{
+              id: "column3"
+            }];
             vm.filter = function (data, num) {
               var result = [];
               data.map(function(value,index) {
